@@ -8,7 +8,7 @@ A guide to these functions is presented below:
 Running the model:
 - The model must be defined with the following input parameters:
 
-model = Language_Model(number_of_agents=,                      # Initial number of languages
+``` model = Language_Model(number_of_agents=,                      # Initial number of languages
                 max_number_of_states=,                   # Max number of states (Min is always 2, 8 is the max allowed by the script)
                 number_of_features=,                    # Number of features per language
                 grid_size=,                             # Size of grid world. If == 20: Grid == 20x20
@@ -18,11 +18,11 @@ model = Language_Model(number_of_agents=,                      # Initial number 
                 inheritance_rate_higher=,             # Max percentage of inheritance (Atleast 1 less than total feature count)
                 birth_likelihood=,                     # Chance to have a child (if they do not interact)
                 child_relocation_likelihood=, # Chance child is born in a neighbouring cell
-                birthing_stop=)                            # Time-step that a child stops being created
+                birthing_stop=)                            # Time-step that a child stops being created ``` 
 
 - The model is ran with the following function(number_of_iterations to be replaced with the required number of time-steps):
 
-df, inheritance_dict, inherit_states, s_v = model.run_simulation(number_of_iterations)
+```df, inheritance_dict, inherit_states, s_v = model.run_simulation(number_of_iterations)```
 
 - The model function returns:
     - df: this is the dataframe including all time-steps for all agents
