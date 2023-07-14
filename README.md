@@ -1,6 +1,8 @@
 # JFT_ADS_Thesis
 **Including python file and notebook used to investigate the impact of contact on the homogeneity of language features. Script has been run using the notebook, hence it is advised to run the notebook.**
 
+To run the Notebook, no changes need to be made. The Python file requires the below functions to be used by the user.
+
 When running the Notebook, the script will run as completed in the research. 
 The python file does not include specific experiments or visualisation, but instead offers a method for a researcher to call the functions themselves with certain parameters.
 A guide to these functions is presented below:
@@ -36,23 +38,23 @@ model = Language_Model(number_of_agents=,                      # Initial number 
 
 ``` 
 
-- The model is ran with the following function(number_of_iterations to be replaced with the required number of time-steps):
+- The model is ran with the following function(```number_of_iterations``` to be replaced with the required number of time-steps):
 
 ```df, inheritance_dict, inherit_states, s_v = model.run_simulation(number_of_iterations)```
 
 - The model function returns:
-    - df: this is the dataframe including all time-steps for all agents
-    - inheritance_dict: a dictionary storing data regarding inherited states (who is the parent language and what percentage of states were inherited by the child)
-    - inheritance_states: a dictionary listing which states a child inherited from a parent, and which were caused by universal preference
-    - state_values: a dictionary of the potential feature states of each feature
+    - ```df```: this is the dataframe including all time-steps for all agents
+    - ```inheritance_dict```: a dictionary storing data regarding inherited states (who is the parent language and what percentage of states were inherited by the child)
+    - ```inheritance_states```: a dictionary listing which states a child inherited from a parent, and which were caused by universal preference
+    - ```state_values```: a dictionary of the potential feature states of each feature
    
 -------------------------------------------------------------------------------------------------------------------------------------
 # Identifying causes of each feature:
-- The effect_measures function takes the df, inheritance_dict, and inheritance_states as inputs from the previous section.
+- The ```effect_measures``` function takes the ```df```, ```inheritance_dict```, and ```inheritance_states``` as inputs from the previous section.
 - The function returns:
-  - causes_dict: a dictionary converted to a dataframe which shows the causes of each final feature state per language (either universal preference, contact, or inheritance)
-  - final_step_df: a dataframe including only the final feature states for each language (can be similarly called using the return_final_state function, using df as the input)
-  - universal initial: a dictionary indicating the preference of the most favoured feature states in the initialisation (e.g., if Feature_1's most common state is "A", and 6/10 agents have "A" for this feature, the Universal Preference for Feature_1 = 60%)
+  - ```causes_dict```: a dictionary converted to a dataframe which shows the causes of each final feature state per language (either universal preference, contact, or inheritance)
+  - ```final_step_df```: a dataframe including only the final feature states for each language (can be similarly called using the return_final_state function, using df as the input)
+  - ```universal initial```: a dictionary indicating the preference of the most favoured feature states in the initialisation (e.g., if Feature_1's most common state is "A", and 6/10 agents have "A" for this feature, the Universal Preference for Feature_1 = 60%)
 
 -------------------------------------------------------------------------------------------------------------------------------------
 # Running entropy experiments:
